@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор паролей - придумайте надежный пароль бесплатно</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Логотип сайта">
+        </div>
+        <div class="language-switcher">
+            <div class="current-flag" id="current-flag">
+                <img src="assets/flags/ru.png" alt="Текущий язык">
+            </div>
+            <div class="language-dropdown" id="language-dropdown">
+                <div class="language-option" data-lang="ru">
+                    <img src="assets/flags/ru.png" alt="Русский">
+                    <span>Русский</span>
+                </div>
+                <div class="language-option" data-lang="en">
+                    <img src="assets/flags/en.png" alt="Английский">
+                    <span>English</span>
+                </div>
+                <div class="language-option" data-lang="fr">
+                    <img src="assets/flags/fr.png" alt="Французский">
+                    <span>Français</span>
+                </div>
+                <div class="language-option" data-lang="es">
+                    <img src="assets/flags/es.png" alt="Испанский">
+                    <span>Español</span>
+                </div>
+                <div class="language-option" data-lang="de">
+                    <img src="assets/flags/de.png" alt="Немецкий">
+                    <span>Deutsch</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Генератор паролей</h1>
+        <p class="subtitle">Создайте надежный пароль с помощью нашего генератора.</p>
+
+        <div class="generator">
+            <label for="length">Длина пароля:</label>
+            <input type="number" id="length" min="8" max="64" value="12">
+            <div id="length-warning" class="warning">Максимальная длина пароля 64 символа</div>
+
+            <label>
+                <input type="checkbox" id="numbers" checked> Наличие цифр — <span class="example">1234...</span>
+            </label>
+            <label>
+                <input type="checkbox" id="uppercase" checked> Наличие прописных букв — <span class="example">ABCD...</span>
+            </label>
+            <label>
+                <input type="checkbox" id="lowercase" checked> Наличие строчных букв — <span class="example">abcd...</span>
+            </label>
+            <label>
+                <input type="checkbox" id="symbols" checked> Наличие специальных символов — <span class="example">@$&/...</span>
+            </label>
+            <label>
+                <input type="checkbox" id="no-repeats"> Не повторять символы
+            </label>
+
+            <button id="generate">Сгенерировать</button>
+            <div id="password-output">
+                <span id="password-text"></span>
+                <button id="copy-button" style="display: none;">Copy</button>
+            </div>
+        </div>
+
+        <!-- SEO-текст -->
+        <div class="seo-text">
+            <h2>О генераторе паролей</h2>
+            <p>
+                Наш генератор паролей — это удобный инструмент для создания надежных и безопасных паролей. 
+                Используйте его для защиты своих учетных записей, электронной почты, социальных сетей и других сервисов. 
+                Генератор поддерживает создание паролей с цифрами, прописными и строчными буквами, а также специальными символами. 
+                Создавайте уникальные пароли длиной до 64 символов и обеспечивайте максимальную безопасность ваших данных.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#">Политика конфиденциальности</a>
+        <p>© 2025 Генератор паролей passwordgenerator.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

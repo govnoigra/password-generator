@@ -1,0 +1,255 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1a1a1a, #2c3e50); /* Градиент от темно-серого к графитовому */
+    color: #00bfff; /* Голубой цвет текста */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative; /* Для позиционирования логотипа */
+}
+
+/* Шапка */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Логотип */
+.logo img {
+    max-width: 300px; /* Увеличиваем в 5 раз (150px * 5) */
+    position: absolute; /* Позиционируем абсолютно */
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+}
+
+/* Основной контент */
+main {
+    background: rgba(0, 0, 0, 0.3); /* Полупрозрачный темный фон для контента */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для объема */
+    margin-top: 60px; /* Отступ сверху, чтобы контент не накладывался на логотип */
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #00bfff; /* Голубой цвет заголовка */
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    color: #b0c4de; /* Светло-голубой цвет подзаголовка */
+}
+
+/* Генератор */
+.generator {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #b0c4de; /* Светло-голубой цвет текста */
+}
+
+input[type="number"] {
+    padding: 5px;
+    width: 60px;
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
+    border: 1px solid #00bfff;
+    border-radius: 5px;
+    color: #00bfff;
+}
+
+input[type="checkbox"] {
+    accent-color: #00bfff; /* Цвет чекбокса */
+}
+
+button {
+    padding: 10px;
+    background: #00bfff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #009acd; /* Темнее при наведении */
+}
+
+/* Подвал */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #b0c4de; /* Светло-голубой цвет текста */
+}
+
+footer a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Поле для пароля и кнопка Copy */
+#password-output {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    height: auto; /* Высота адаптируется под содержимое */
+    min-height: 30px; /* Минимальная высота */
+    overflow: hidden; /* Скрываем выходящий за пределы текст */
+}
+
+#password-text {
+    flex-grow: 1;
+    font-size: 1.2em;
+    color: #00bfff;
+    padding-right: 10px; /* Отступ от кнопки */
+    word-break: break-all; /* Перенос текста по символам */
+    white-space: normal; /* Разрешаем перенос текста */
+}
+
+/* Уменьшение шрифта для длинных паролей */
+#password-text.long-password {
+    font-size: 0.9em;
+}
+
+#copy-button {
+    padding: 5px 10px;
+    background: #00bfff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    height: 100%; /* Высота равна высоте поля */
+}
+
+#copy-button:hover {
+    background: #009acd;
+}
+
+/* Анимация для кнопки Copy */
+.copied {
+    background: #4caf50 !important; /* Зеленый цвет при успешном копировании */
+}
+
+/* Предупреждение о длине пароля */
+.warning {
+    color: #ff6b6b; /* Красный цвет текста */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none; /* По умолчанию скрыто */
+}
+
+/* Примеры для чекбоксов */
+.example {
+    color: #b0c4de; /* Светло-голубой цвет */
+    font-size: 0.9em;
+}
+
+/* SEO-текст */
+.seo-text {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    color: #b0c4de; /* Светло-голубой цвет текста */
+}
+
+.seo-text h2 {
+    color: #00bfff; /* Голубой цвет заголовка */
+    margin-bottom: 10px;
+}
+
+.seo-text p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Переключатель языка */
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.current-flag img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Круглый флаг */
+    border: 2px solid #00bfff;
+    object-fit: cover; /* Чтобы флаг не искажался */
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.language-dropdown .language-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.language-dropdown .language-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.language-dropdown .language-option img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Круглый флаг */
+    object-fit: cover; /* Чтобы флаг не искажался */
+}
+
+.language-dropdown .language-option span {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Показываем выпадающий список при клике */
+.language-dropdown.active {
+    display: block;
+    opacity: 1;
+}
