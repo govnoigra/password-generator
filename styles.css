@@ -277,12 +277,12 @@ footer a:hover {
 /* Планшеты (768px - 1024px) */
 @media (max-width: 1024px) {
   .logo img {
-    max-width: 200px;
+    max-width: 250px;
     left: 20px;
     top: 20px;
   }
   main {
-    margin-top: 80px; /* Больше места для логотипа */
+    margin-top: 60px; /* Уменьшено с 80px */
     padding: 15px;
   }
 }
@@ -292,10 +292,11 @@ footer a:hover {
   body {
     padding: 10px;
     min-height: auto;
+    font-size: 17px; /* Добавлено */
   }
 
   .logo img {
-    max-width: 180px;
+    max-width: 230px;
     position: absolute;
     left: 15px;
     top: 15px;
@@ -318,15 +319,17 @@ footer a:hover {
 
   main {
     width: 100%;
-    margin-top: 70px; /* Уменьшаем отступ */
+    margin-top: 50px; /* Уменьшено с 70px */
     padding: 15px;
   }
 
   input[type="number"] {
-    width: 50px;
+    width: 65px; /* Увеличено с 50px */
+    padding: 8px; /* Добавлено */
+    font-size: 1.1em; /* Добавлено */
   }
 
-  /* Кнопка Copy теперь остается справа */
+  /* Кнопка Copy остается справа */
   #password-output {
     flex-direction: row;
     align-items: center;
@@ -336,20 +339,26 @@ footer a:hover {
   #copy-button {
     width: auto;
   }
+
+  /* Добавлено для кнопки генерации */
+  #generate {
+    font-size: 1.1em;
+    padding: 12px;
+  }
 }
 
 /* Очень маленькие экраны (до 480px) */
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.5em;
+    font-size: 1.7em; /* Увеличено с 1.5em */
   }
 
   .subtitle {
-    font-size: 0.9em;
+    font-size: 1em; /* Увеличено с 0.9em */
   }
 
   label {
-    font-size: 0.9em;
+    font-size: 1em; /* Увеличено с 0.9em */
   }
 
   .generator {
@@ -358,13 +367,19 @@ footer a:hover {
 
   .seo-text {
     padding: 10px;
-    font-size: 0.9em;
+    font-size: 0.95em; /* Микро-увеличение */
   }
 
   .logo img {
     max-width: 150px;
     left: 10px;
     top: 10px;
+  }
+
+  /* Добавлено для поля ввода */
+  input[type="number"] {
+    width: 70px;
+    padding: 10px 8px;
   }
 }
 
@@ -386,14 +401,14 @@ footer a:hover {
 /* Длинные пароли */
 @media (max-width: 480px) {
   #password-text.long-password {
-    font-size: 0.7em;
+    font-size: 0.75em; /* Микро-увеличение с 0.7em */
   }
 }
 
 /* Футер */
 @media (max-width: 768px) {
   footer {
-    font-size: 0.8em;
+    font-size: 0.85em; /* Микро-увеличение с 0.8em */
     margin-top: 20px;
   }
 }

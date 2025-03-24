@@ -148,9 +148,6 @@ function applyTranslations(translations) {
     const generateButton = document.getElementById('generate');
     if (generateButton) generateButton.textContent = translations.generateButton;
 
-    const copyButton = document.getElementById('copy-button');
-    if (copyButton) copyButton.textContent = translations.copyButton;
-
     // Обновляем SEO-текст
     const seoTitle = document.querySelector('.seo-text h2');
     if (seoTitle) seoTitle.textContent = translations.seoTitle;
