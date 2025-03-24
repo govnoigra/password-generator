@@ -129,20 +129,26 @@ function applyTranslations(translations) {
     const lengthLabel = document.querySelector('label[for="length"]');
     if (lengthLabel) lengthLabel.textContent = translations.lengthLabel;
 
-    const numbersLabel = document.querySelector('label[for="numbers"]');
-    if (numbersLabel) numbersLabel.innerHTML = `<input type="checkbox" id="numbers" checked> ${translations.numbersLabel}`;
+    // Сохраняем текущие состояния чекбоксов
+    const numbersChecked = document.getElementById('numbers').checked;
+    const uppercaseChecked = document.getElementById('uppercase').checked;
+    const lowercaseChecked = document.getElementById('lowercase').checked;
+    const symbolsChecked = document.getElementById('symbols').checked;
+    const noRepeatsChecked = document.getElementById('no-repeats').checked;
 
-    const uppercaseLabel = document.querySelector('label[for="uppercase"]');
-    if (uppercaseLabel) uppercaseLabel.innerHTML = `<input type="checkbox" id="uppercase" checked> ${translations.uppercaseLabel}`;
+    // Обновляем текст, сохраняя состояния
+    document.querySelector('label[for="numbers"] .label-text').textContent = translations.numbersLabel;
+    document.querySelector('label[for="uppercase"] .label-text').textContent = translations.uppercaseLabel;
+    document.querySelector('label[for="lowercase"] .label-text').textContent = translations.lowercaseLabel;
+    document.querySelector('label[for="symbols"] .label-text').textContent = translations.symbolsLabel;
+    document.querySelector('label[for="no-repeats"] .label-text').textContent = translations.noRepeatsLabel;
 
-    const lowercaseLabel = document.querySelector('label[for="lowercase"]');
-    if (lowercaseLabel) lowercaseLabel.innerHTML = `<input type="checkbox" id="lowercase" checked> ${translations.lowercaseLabel}`;
-
-    const symbolsLabel = document.querySelector('label[for="symbols"]');
-    if (symbolsLabel) symbolsLabel.innerHTML = `<input type="checkbox" id="symbols" checked> ${translations.symbolsLabel}`;
-
-    const noRepeatsLabel = document.querySelector('label[for="no-repeats"]');
-    if (noRepeatsLabel) noRepeatsLabel.innerHTML = `<input type="checkbox" id="no-repeats"> ${translations.noRepeatsLabel}`;
+    // Восстанавливаем состояния
+    document.getElementById('numbers').checked = numbersChecked;
+    document.getElementById('uppercase').checked = uppercaseChecked;
+    document.getElementById('lowercase').checked = lowercaseChecked;
+    document.getElementById('symbols').checked = symbolsChecked;
+    document.getElementById('no-repeats').checked = noRepeatsChecked;
 
     // Обновляем кнопки
     const generateButton = document.getElementById('generate');

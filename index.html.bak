@@ -50,19 +50,19 @@
             <div id="length-warning" class="warning">Максимальная длина пароля 64 символа</div>
 
             <label>
-                <input type="checkbox" id="numbers" checked> Наличие цифр — 1234...
+                <input type="checkbox" id="numbers" checked> <span class="label-text">Наличие цифр — 1234...</span>
             </label>
             <label>
-                <input type="checkbox" id="uppercase" checked> Наличие прописных букв — ABCD...
+                <input type="checkbox" id="uppercase" checked> <span class="label-text">Наличие прописных букв — ABCD...</span>
             </label>
             <label>
-                <input type="checkbox" id="lowercase" checked> Наличие строчных букв — abcd...
+                <input type="checkbox" id="lowercase" checked> <span class="label-text">Наличие строчных букв — abcd...</span>
             </label>
             <label>
-                <input type="checkbox" id="symbols" checked> Наличие специальных символов — @$&/...
+                <input type="checkbox" id="symbols" checked> <span class="label-text">Наличие специальных символов — @$&/...</span>
             </label>
             <label>
-                <input type="checkbox" id="no-repeats"> Не повторять символы
+                <input type="checkbox" id="no-repeats"> <span class="label-text">Не повторять символы</span>
             </label>
 
             <button id="generate">Сгенерировать</button>
