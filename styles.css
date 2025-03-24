@@ -277,12 +277,12 @@ footer a:hover {
 /* Планшеты (768px - 1024px) */
 @media (max-width: 1024px) {
   .logo img {
-    max-width: 400px;
+    max-width: 350px;
     left: 20px;
     top: 20px;
   }
   main {
-    margin-top: 45px; /* Уменьшено с 80px */
+    margin-top: 50px; /* Уменьшено с 80px */
     padding: 15px;
   }
 }
@@ -296,7 +296,7 @@ footer a:hover {
   }
 
   .logo img {
-    max-width: 400px;
+    max-width: 350px;
     position: absolute;
     left: 15px;
     top: 15px;
@@ -371,9 +371,14 @@ footer a:hover {
   }
 
   .logo img {
-    max-width: 150px;
+    max-width: 320px;
     left: 10px;
     top: 10px;
+  }
+
+	main {
+    margin-top: 50px; /* Уменьшено с 80px */
+    padding: 15px;
   }
 
   /* Добавлено для поля ввода */
