@@ -129,20 +129,12 @@ function applyTranslations(translations) {
     const lengthLabel = document.querySelector('label[for="length"]');
     if (lengthLabel) lengthLabel.textContent = translations.lengthLabel;
 
-    const numbersLabel = document.querySelector('label[for="numbers"]');
-    if (numbersLabel) numbersLabel.innerHTML = `<input type="checkbox" id="numbers" checked> ${translations.numbersLabel}`;
-
-    const uppercaseLabel = document.querySelector('label[for="uppercase"]');
-    if (uppercaseLabel) uppercaseLabel.innerHTML = `<input type="checkbox" id="uppercase" checked> ${translations.uppercaseLabel}`;
-
-    const lowercaseLabel = document.querySelector('label[for="lowercase"]');
-    if (lowercaseLabel) lowercaseLabel.innerHTML = `<input type="checkbox" id="lowercase" checked> ${translations.lowercaseLabel}`;
-
-    const symbolsLabel = document.querySelector('label[for="symbols"]');
-    if (symbolsLabel) symbolsLabel.innerHTML = `<input type="checkbox" id="symbols" checked> ${translations.symbolsLabel}`;
-
-    const noRepeatsLabel = document.querySelector('label[for="no-repeats"]');
-    if (noRepeatsLabel) noRepeatsLabel.innerHTML = `<input type="checkbox" id="no-repeats"> ${translations.noRepeatsLabel}`;
+    // Обновляем только текстовую часть меток с чекбоксами
+    updateLabelText('numbers', translations.numbersLabel);
+    updateLabelText('uppercase', translations.uppercaseLabel);
+    updateLabelText('lowercase', translations.lowercaseLabel);
+    updateLabelText('symbols', translations.symbolsLabel);
+    updateLabelText('no-repeats', translations.noRepeatsLabel);
 
     // Обновляем кнопки
     const generateButton = document.getElementById('generate');
@@ -168,6 +160,18 @@ function applyTranslations(translations) {
     // Обновляем предупреждение о длине пароля
     const lengthWarning = document.getElementById('length-warning');
     if (lengthWarning) lengthWarning.textContent = translations.lengthWarning;
+}
+
+// Функция для обновления текстовой части метки с чекбоксом
+function updateLabelText(forAttribute, text) {
+    const label = document.querySelector(`label[for="${forAttribute}"]`);
+    if (label) {
+        // Находим текстовый узел внутри label (после чекбокса)
+        const textNode = Array.from(label.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+        if (textNode) {
+            textNode.textContent = ` ${text}`; // Обновляем текст
+        }
+    }
 }
 
 // Функция для обновления текущего флага
