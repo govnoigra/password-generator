@@ -119,31 +119,55 @@ function applyTranslations(translations) {
     document.querySelector('title').textContent = translations.title;
 
     // Обновляем заголовок и подзаголовок
-    document.querySelector('h1').textContent = translations.title;
-    document.querySelector('.subtitle').textContent = translations.subtitle;
+    const h1 = document.querySelector('h1');
+    if (h1) h1.textContent = translations.title;
+
+    const subtitle = document.querySelector('.subtitle');
+    if (subtitle) subtitle.textContent = translations.subtitle;
 
     // Обновляем метки и примеры для чекбоксов
-    document.querySelector('label[for="length"]').textContent = translations.lengthLabel;
-    document.querySelector('label[for="numbers"]').innerHTML = `<input type="checkbox" id="numbers" checked> ${translations.numbersLabel}`;
-    document.querySelector('label[for="uppercase"]').innerHTML = `<input type="checkbox" id="uppercase" checked> ${translations.uppercaseLabel}`;
-    document.querySelector('label[for="lowercase"]').innerHTML = `<input type="checkbox" id="lowercase" checked> ${translations.lowercaseLabel}`;
-    document.querySelector('label[for="symbols"]').innerHTML = `<input type="checkbox" id="symbols" checked> ${translations.symbolsLabel}`;
-    document.querySelector('label[for="no-repeats"]').innerHTML = `<input type="checkbox" id="no-repeats"> ${translations.noRepeatsLabel}`;
+    const lengthLabel = document.querySelector('label[for="length"]');
+    if (lengthLabel) lengthLabel.textContent = translations.lengthLabel;
+
+    const numbersLabel = document.querySelector('label[for="numbers"]');
+    if (numbersLabel) numbersLabel.innerHTML = `<input type="checkbox" id="numbers" checked> ${translations.numbersLabel}`;
+
+    const uppercaseLabel = document.querySelector('label[for="uppercase"]');
+    if (uppercaseLabel) uppercaseLabel.innerHTML = `<input type="checkbox" id="uppercase" checked> ${translations.uppercaseLabel}`;
+
+    const lowercaseLabel = document.querySelector('label[for="lowercase"]');
+    if (lowercaseLabel) lowercaseLabel.innerHTML = `<input type="checkbox" id="lowercase" checked> ${translations.lowercaseLabel}`;
+
+    const symbolsLabel = document.querySelector('label[for="symbols"]');
+    if (symbolsLabel) symbolsLabel.innerHTML = `<input type="checkbox" id="symbols" checked> ${translations.symbolsLabel}`;
+
+    const noRepeatsLabel = document.querySelector('label[for="no-repeats"]');
+    if (noRepeatsLabel) noRepeatsLabel.innerHTML = `<input type="checkbox" id="no-repeats"> ${translations.noRepeatsLabel}`;
 
     // Обновляем кнопки
-    document.getElementById('generate').textContent = translations.generateButton;
-    document.getElementById('copy-button').textContent = translations.copyButton;
+    const generateButton = document.getElementById('generate');
+    if (generateButton) generateButton.textContent = translations.generateButton;
+
+    const copyButton = document.getElementById('copy-button');
+    if (copyButton) copyButton.textContent = translations.copyButton;
 
     // Обновляем SEO-текст
-    document.querySelector('.seo-text h2').textContent = translations.seoTitle;
-    document.querySelector('.seo-text p').textContent = translations.seoText;
+    const seoTitle = document.querySelector('.seo-text h2');
+    if (seoTitle) seoTitle.textContent = translations.seoTitle;
+
+    const seoText = document.querySelector('.seo-text p');
+    if (seoText) seoText.textContent = translations.seoText;
 
     // Обновляем футер
-    document.querySelector('footer a').textContent = translations.privacyPolicy;
-    document.querySelector('footer p').textContent = translations.copyright;
+    const privacyPolicy = document.querySelector('footer a');
+    if (privacyPolicy) privacyPolicy.textContent = translations.privacyPolicy;
+
+    const copyright = document.querySelector('footer p');
+    if (copyright) copyright.textContent = translations.copyright;
 
     // Обновляем предупреждение о длине пароля
-    document.getElementById('length-warning').textContent = translations.lengthWarning;
+    const lengthWarning = document.getElementById('length-warning');
+    if (lengthWarning) lengthWarning.textContent = translations.lengthWarning;
 }
 
 // Функция для обновления текущего флага

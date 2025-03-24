@@ -115,21 +115,35 @@ async function loadLanguage(lang) {
 
 // Функция для применения перевода
 function applyTranslations(translations) {
+    // Обновляем заголовок страницы
     document.querySelector('title').textContent = translations.title;
+
+    // Обновляем заголовок и подзаголовок
     document.querySelector('h1').textContent = translations.title;
     document.querySelector('.subtitle').textContent = translations.subtitle;
+
+    // Обновляем метки и примеры для чекбоксов
     document.querySelector('label[for="length"]').textContent = translations.lengthLabel;
     document.querySelector('label[for="numbers"]').innerHTML = `<input type="checkbox" id="numbers" checked> ${translations.numbersLabel}`;
     document.querySelector('label[for="uppercase"]').innerHTML = `<input type="checkbox" id="uppercase" checked> ${translations.uppercaseLabel}`;
     document.querySelector('label[for="lowercase"]').innerHTML = `<input type="checkbox" id="lowercase" checked> ${translations.lowercaseLabel}`;
     document.querySelector('label[for="symbols"]').innerHTML = `<input type="checkbox" id="symbols" checked> ${translations.symbolsLabel}`;
     document.querySelector('label[for="no-repeats"]').innerHTML = `<input type="checkbox" id="no-repeats"> ${translations.noRepeatsLabel}`;
+
+    // Обновляем кнопки
     document.getElementById('generate').textContent = translations.generateButton;
     document.getElementById('copy-button').textContent = translations.copyButton;
+
+    // Обновляем SEO-текст
     document.querySelector('.seo-text h2').textContent = translations.seoTitle;
     document.querySelector('.seo-text p').textContent = translations.seoText;
+
+    // Обновляем футер
     document.querySelector('footer a').textContent = translations.privacyPolicy;
     document.querySelector('footer p').textContent = translations.copyright;
+
+    // Обновляем предупреждение о длине пароля
+    document.getElementById('length-warning').textContent = translations.lengthWarning;
 }
 
 // Функция для обновления текущего флага
