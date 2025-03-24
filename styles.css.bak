@@ -18,6 +18,10 @@ header {
     width: 100%;
     text-align: center;
     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 /* Логотип */
@@ -91,7 +95,6 @@ button:hover {
     background: #009acd; /* Темнее при наведении */
 }
 
-
 /* Подвал */
 footer {
     margin-top: 40px;
@@ -157,28 +160,12 @@ footer a:hover {
     background: #4caf50 !important; /* Зеленый цвет при успешном копировании */
 }
 
-
 /* Предупреждение о длине пароля */
 .warning {
     color: #ff6b6b; /* Красный цвет текста */
     font-size: 0.9em;
     margin-top: 5px;
     display: none; /* По умолчанию скрыто */
-}
-
-/* Анимация для кнопки Copy */
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.copied::after {
-    content: "Copied!";
-    animation: fadeOut 1s ease forwards;
 }
 
 /* Примеры для чекбоксов */
@@ -207,37 +194,29 @@ footer a:hover {
     line-height: 1.5;
 }
 
-/* Логотип и шапка */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    position: relative;
-}
-
 /* Переключатель языка */
 .language-switcher {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;
     cursor: pointer;
 }
 
 .current-flag img {
-    width: 30px;
-    height: 20px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Круглый флаг */
     border: 2px solid #00bfff;
+    object-fit: cover; /* Чтобы флаг не искажался */
 }
 
 .language-dropdown {
     display: none;
     position: absolute;
-    top: 30px;
-    left: 0;
+    top: 50px;
+    right: 0;
     background: rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -258,9 +237,10 @@ header {
 }
 
 .language-dropdown .language-option img {
-    width: 20px;
-    height: 15px;
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Круглый флаг */
+    object-fit: cover; /* Чтобы флаг не искажался */
 }
 
 .language-dropdown .language-option span {
@@ -268,18 +248,8 @@ header {
     font-weight: bold;
 }
 
-/* Показываем выпадающий список при наведении */
-.language-switcher:hover .language-dropdown {
-    display: block;
-}
-
-.language-dropdown {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.language-switcher:hover .language-dropdown {
+/* Показываем выпадающий список при клике */
+.language-dropdown.active {
     display: block;
     opacity: 1;
 }

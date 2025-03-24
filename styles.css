@@ -253,3 +253,137 @@ footer a:hover {
     display: block;
     opacity: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Адаптивность */
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+  .logo img {
+    max-width: 200px;
+    left: 10px;
+    top: 10px;
+  }
+  main {
+    margin-top: 40px;
+    padding: 15px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .logo img {
+    max-width: 150px;
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .language-switcher {
+    position: static;
+    margin-top: 10px;
+  }
+
+  main {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  input[type="number"] {
+    width: 50px;
+  }
+
+  #password-output {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #copy-button {
+    width: 100%;
+  }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 0.9em;
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  .generator {
+    gap: 8px;
+  }
+
+  .seo-text {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .language-dropdown {
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .language-option {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #password-text.long-password {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8em;
+    margin-top: 20px;
+  }
+}
+
+/* Отключение hover-эффектов на тач-устройствах */
+@media (hover: none) {
+  button:hover, #copy-button:hover {
+    background: #00bfff;
+  }
+}
+
+/* Вертикальная ориентация */
+@media (orientation: portrait) {
+  body {
+    padding-top: 20px;
+  }
+}
