@@ -129,20 +129,20 @@ function applyTranslations(translations) {
     const lengthLabel = document.querySelector('label[for="length"]');
     if (lengthLabel) lengthLabel.textContent = translations.lengthLabel;
 
-    const numbersLabel = document.querySelector('label[for="numbers"]');
-    if (numbersLabel) numbersLabel.innerHTML = `<input type="checkbox" id="numbers" checked> ${translations.numbersLabel}`;
+    const numbersLabel = document.querySelector('label[for="numbers"] span');
+    if (numbersLabel) numbersLabel.textContent = translations.numbersLabel;
 
-    const uppercaseLabel = document.querySelector('label[for="uppercase"]');
-    if (uppercaseLabel) uppercaseLabel.innerHTML = `<input type="checkbox" id="uppercase" checked> ${translations.uppercaseLabel}`;
+    const uppercaseLabel = document.querySelector('label[for="uppercase"] span');
+    if (uppercaseLabel) uppercaseLabel.textContent = translations.uppercaseLabel;
 
-    const lowercaseLabel = document.querySelector('label[for="lowercase"]');
-    if (lowercaseLabel) lowercaseLabel.innerHTML = `<input type="checkbox" id="lowercase" checked> ${translations.lowercaseLabel}`;
+    const lowercaseLabel = document.querySelector('label[for="lowercase"] span');
+    if (lowercaseLabel) lowercaseLabel.textContent = translations.lowercaseLabel;
 
-    const symbolsLabel = document.querySelector('label[for="symbols"]');
-    if (symbolsLabel) symbolsLabel.innerHTML = `<input type="checkbox" id="symbols" checked> ${translations.symbolsLabel}`;
+    const symbolsLabel = document.querySelector('label[for="symbols"] span');
+    if (symbolsLabel) symbolsLabel.textContent = translations.symbolsLabel;
 
-    const noRepeatsLabel = document.querySelector('label[for="no-repeats"]');
-    if (noRepeatsLabel) noRepeatsLabel.innerHTML = `<input type="checkbox" id="no-repeats"> ${translations.noRepeatsLabel}`;
+    const noRepeatsLabel = document.querySelector('label[for="no-repeats"] span');
+    if (noRepeatsLabel) noRepeatsLabel.textContent = translations.noRepeatsLabel;
 
     // Обновляем кнопки
     const generateButton = document.getElementById('generate');
