@@ -9,35 +9,36 @@
 <body>
     <header>
         <div class="logo">
-        <img src="assets/logo.png" alt="Логотип сайта">
-    </div>
-    <div class="language-switcher">
-        <div class="current-flag" id="current-flag">
-            <img src="assets/flags/ru.png" alt="Текущий язык">
+            <img src="assets/logo.png" alt="Логотип сайта">
         </div>
-        <div class="language-dropdown" id="language-dropdown">
-            <div class="language-option" data-lang="ru">
-                <img src="assets/flags/ru.png" alt="Русский">
-                <span>Русский</span>
+        <div class="language-switcher">
+            <div class="current-flag" id="current-flag">
+                <img src="assets/flags/ru.png" alt="Текущий язык">
             </div>
-            <div class="language-option" data-lang="en">
-                <img src="assets/flags/en.png" alt="Английский">
-                <span>English</span>
-            </div>
-            <div class="language-option" data-lang="fr">
-                <img src="assets/flags/fr.png" alt="Французский">
-                <span>Français</span>
-            </div>
-            <div class="language-option" data-lang="es">
-                <img src="assets/flags/es.png" alt="Испанский">
-                <span>Español</span>
-            </div>
-            <div class="language-option" data-lang="de">
-                <img src="assets/flags/de.png" alt="Немецкий">
-                <span>Deutsch</span>
+            <div class="language-dropdown" id="language-dropdown">
+                <div class="language-option" data-lang="ru">
+                    <img src="assets/flags/ru.png" alt="Русский">
+                    <span>Русский</span>
+                </div>
+                <div class="language-option" data-lang="en">
+                    <img src="assets/flags/en.png" alt="Английский">
+                    <span>English</span>
+                </div>
+                <div class="language-option" data-lang="fr">
+                    <img src="assets/flags/fr.png" alt="Французский">
+                    <span>Français</span>
+                </div>
+                <div class="language-option" data-lang="es">
+                    <img src="assets/flags/es.png" alt="Испанский">
+                    <span>Español</span>
+                </div>
+                <div class="language-option" data-lang="de">
+                    <img src="assets/flags/de.png" alt="Немецкий">
+                    <span>Deutsch</span>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
     <main>
         <h1>Генератор паролей</h1>
