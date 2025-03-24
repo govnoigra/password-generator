@@ -96,7 +96,6 @@ document.getElementById('length').addEventListener('input', function() {
     }
 });
 
-
 let currentLang = 'ru'; // По умолчанию русский язык
 
 // Функция для загрузки языка
@@ -156,16 +155,13 @@ document.querySelectorAll('.language-option').forEach(option => {
 });
 
 // Закрытие выпадающего списка при клике вне его
-document.addEventListener('click', () => {
-    document.getElementById('language-dropdown').style.display = 'none';
+document.addEventListener('click', (event) => {
+    const languageSwitcher = document.querySelector('.language-switcher');
+    const dropdown = document.getElementById('language-dropdown');
+    if (!languageSwitcher.contains(event.target)) {
+        dropdown.style.display = 'none';
+    }
 });
 
 // Загружаем язык по умолчанию
 loadLanguage(currentLang);
-
-document.addEventListener('click', (event) => {
-    const languageSwitcher = document.querySelector('.language-switcher');
-    if (!languageSwitcher.contains(event.target)) {
-        document.getElementById('language-dropdown').style.display = 'none';
-    }
-});
