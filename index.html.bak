@@ -49,19 +49,19 @@
             <input type="number" id="length" min="8" max="64" value="12">
             <div id="length-warning" class="warning">Максимальная длина пароля 64 символа</div>
 
-            <label>
+            <label for="numbers">
                 <input type="checkbox" id="numbers" checked> <span>Наличие цифр — 1234...</span>
             </label>
-            <label>
+            <label for="uppercase">
                 <input type="checkbox" id="uppercase" checked> <span>Наличие прописных букв — ABCD...</span>
             </label>
-            <label>
+            <label for="lowercase">
                 <input type="checkbox" id="lowercase" checked> <span>Наличие строчных букв — abcd...</span>
             </label>
-            <label>
+            <label for="symbols">
                 <input type="checkbox" id="symbols" checked> <span>Наличие специальных символов — @$&/...</span>
             </label>
-            <label>
+            <label for="no-repeats">
                 <input type="checkbox" id="no-repeats"> <span>Не повторять символы</span>
             </label>
 
