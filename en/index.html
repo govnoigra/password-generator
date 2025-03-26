@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+        <img src="assets/logo.png" alt="Логотип сайта">
+			</a>
+        </div>
+        <div class="language-switcher">
+            <div class="current-flag" id="current-flag">
+                <img src="assets/flags/ru.png" alt="Текущий язык">
+            </div>
+            <div class="language-dropdown" id="language-dropdown">
+                <div class="language-option" data-lang="en">
+                    <img src="assets/flags/en.png" alt="Английский">
+                    <span>English</span>
+                </div>
+                <div class="language-option" data-lang="fr">
+                    <img src="assets/flags/fr.png" alt="Французский">
+                    <span>Français</span>
+                </div>
+                <div class="language-option" data-lang="es">
+                    <img src="assets/flags/es.png" alt="Испанский">
+                    <span>Español</span>
+                </div>
+                <div class="language-option" data-lang="de">
+                    <img src="assets/flags/de.png" alt="Немецкий">
+                    <span>Deutsch</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Password Generator</h1>
+        <p class="subtitle">Create a strong password with our generator.</p>
+
+        <div class="generator">
+            <label for="length">Password length:</label>
+            <input type="number" id="length" min="8" max="64" value="12">
+            <div id="length-warning" class="warning">Maximum password length is 64 characters</div>
+
+            <label for="numbers">
+                <input type="checkbox" id="numbers" checked> <span>Include numbers — 1234...</span>
+            </label>
+            <label for="uppercase">
+                <input type="checkbox" id="uppercase" checked> <span>Include uppercase letters — ABCD...</span>
+            </label>
+            <label for="lowercase">
+                <input type="checkbox" id="lowercase" checked> <span>Include lowercase letters — abcd...</span>
+            </label>
+            <label for="symbols">
+                <input type="checkbox" id="symbols" checked> <span>Include special symbols — @$&/...</span>
+            </label>
+            <label for="no-repeats">
+                <input type="checkbox" id="no-repeats"> <span>Do not repeat characters</span>
+            </label>
+
+            <button id="generate">Generate</button>
+            <div id="password-output">
+                <span id="password-text"></span>
+                <button id="copy-button" style="display: none;">Copy</button>
+            </div>
+        </div>
+
+        <!-- SEO-текст -->
+        <div class="seo-text">
+            <h2>About the Password Generator</h2>
+            <p>
+                Our password generator is a convenient tool for creating strong and secure passwords. Use it to protect your accounts, email, social networks, and other services. The generator supports creating passwords with numbers, uppercase and lowercase letters, and special symbols. Create unique passwords up to 64 characters long and ensure maximum security for your data.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#">Privacy Policy</a>
+        <p>© 2025 Password Generator passwordgenerator.com</p>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
