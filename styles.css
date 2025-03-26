@@ -259,46 +259,6 @@ footer a:hover {
     opacity: 1;
 }
 
-/* Полоса силы пароля */
-#password-strength {
-    margin-top: 15px;
-    text-align: left;
-}
-
-#strength-bar {
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    appearance: none;
-    background: #ddd;
-}
-
-#strength-bar::-webkit-progress-bar {
-    background: #ddd;
-    border-radius: 5px;
-}
-
-#strength-bar::-webkit-progress-value {
-    background: #ff6b6b;
-    border-radius: 5px;
-    transition: width 0.3s ease;
-}
-
-#strength-bar[data-strength="medium"]::-webkit-progress-value {
-    background: #fbc02d;
-}
-
-#strength-bar[data-strength="strong"]::-webkit-progress-value {
-    background: #4caf50;
-}
-
-#strength-text {
-    display: block;
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #b0c4de;
-}
-
 /* Адаптивность */
 /* Планшеты (768px - 1024px) */
 @media (max-width: 1024px) {

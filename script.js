@@ -68,7 +68,7 @@ document.getElementById('generate').addEventListener('click', function() {
         includeSymbols,
     };
 
-    updateStrengthIndicator(password, options);
+    // Removed call to updateStrengthIndicator
 });
 
 // Копирование пароля в буфер обмена
@@ -215,36 +215,3 @@ document.addEventListener('click', (event) => {
 
 // Загружаем язык по умолчанию
 loadLanguage(currentLang);
-
-function calculateStrength(password, options) {
-    let strength = 0;
-
-    if (options.includeNumbers) strength += 20;
-    if (options.includeUppercase) strength += 20;
-    if (options.includeLowercase) strength += 20;
-    if (options.includeSymbols) strength += 20;
-
-    if (password.length >= 12) strength += 20;
-    else if (password.length >= 8) strength += 10;
-
-    return Math.min(strength, 100);
-}
-
-function updateStrengthIndicator(password, options) {
-    const strengthBar = document.getElementById('strength-bar');
-    const strengthText = document.getElementById('strength-text');
-    const strength = calculateStrength(password, options);
-
-    strengthBar.value = strength;
-
-    if (strength < 40) {
-        strengthBar.setAttribute('data-strength', 'weak');
-        strengthText.textContent = currentLang === 'ru' ? 'Слабый пароль' : 'Weak password';
-    } else if (strength < 80) {
-        strengthBar.setAttribute('data-strength', 'medium');
-        strengthText.textContent = currentLang === 'ru' ? 'Средний пароль' : 'Medium password';
-    } else {
-        strengthBar.setAttribute('data-strength', 'strong');
-        strengthText.textContent = currentLang === 'ru' ? 'Сильный пароль' : 'Strong password';
-    }
-}
