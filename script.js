@@ -174,6 +174,12 @@ function applyTranslations(translations) {
     // Обновляем предупреждение о длине пароля
     const lengthWarning = document.getElementById('length-warning');
     if (lengthWarning) lengthWarning.textContent = translations.lengthWarning;
+
+    const strengthLabel = document.getElementById('strength-label');
+    if (strengthLabel) strengthLabel.textContent = translations.strengthLabel;
+
+    const strengthText = document.getElementById('strength-text');
+    if (strengthText) strengthText.textContent = ''; // Clear strength text on language change
 }
 
 // Функция для обновления текущего флага
@@ -233,12 +239,12 @@ function updateStrengthIndicator(password, options) {
 
     if (strength < 40) {
         strengthBar.setAttribute('data-strength', 'weak');
-        strengthText.textContent = 'Слабый пароль';
+        strengthText.textContent = currentLang === 'ru' ? 'Слабый пароль' : 'Weak password';
     } else if (strength < 80) {
         strengthBar.setAttribute('data-strength', 'medium');
-        strengthText.textContent = 'Средний пароль';
+        strengthText.textContent = currentLang === 'ru' ? 'Средний пароль' : 'Medium password';
     } else {
         strengthBar.setAttribute('data-strength', 'strong');
-        strengthText.textContent = 'Сильный пароль';
+        strengthText.textContent = currentLang === 'ru' ? 'Сильный пароль' : 'Strong password';
     }
 }
