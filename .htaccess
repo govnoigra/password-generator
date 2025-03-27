@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# 1. Редирект с HTTP на HTTPS
+RewriteCond %{HTTPS} off [OR]
+# 2. Редирект с WWW на без WWW
+RewriteCond %{HTTP_HOST} ^www\.generator-password\.online [NC]
+RewriteRule ^(.*)$ https://generator-password.online/$1 [L,R=301]
+
+# 3. Редирект с /index.html на главную
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*/)index\.html$ /$1 [R=301,L]
