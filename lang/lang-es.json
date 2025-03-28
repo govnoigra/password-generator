@@ -1,5 +1,5 @@
 {
-  "title": "Generador de contraseñas",
+  "h1": "Generador de contraseñas",
   "subtitle": "Crea una contraseña segura con nuestro generador.",
   "lengthLabel": "Longitud de la contraseña:",
   "numbersLabel": "Incluir números — 1234...",
