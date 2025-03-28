@@ -1,15 +1,9 @@
 RewriteEngine On
 
-# Редирект wwww. → на без www
-#RewriteCond %{HTTP_HOST} .
-#RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
-#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^www.generator-password\.online$ [NC]
-RewriteRule ^(.*)$ http://generator-password.online/$1 [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^(www\.)?generator-password\.online$ [NC]
-RewriteRule ^(.*)$ https://generator-password.online/$1 [R=301,L]
+# Редирект www. → на без www
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 # 2. Редирект с /index.html на главную
 RewriteCond %{THE_REQUEST} /index\.html [NC]
