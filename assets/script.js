@@ -128,8 +128,8 @@ function applyTranslations(translations) {
     document.querySelector('title').textContent = translations.title;
 
     // Обновляем заголовок и подзаголовок
-    const h1 = document.querySelector('h1');
-    if (h1) h1.textContent = translations.title;
+    const pagetitle = document.querySelector('pagetitle');
+    if (pagetitle) pagetitle.textContent = translations.pagetitle;
 
     const subtitle = document.querySelector('.subtitle');
     if (subtitle) subtitle.textContent = translations.subtitle;
