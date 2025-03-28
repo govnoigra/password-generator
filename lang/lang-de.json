@@ -1,5 +1,5 @@
 {
-  "h1": "Passwort-Generator",
+  "pagetitle": "Passwort-Generator",
   "subtitle": "Erstellen Sie ein sicheres Passwort mit unserem Generator.",
   "lengthLabel": "Passwortlänge:",
   "numbersLabel": "Zahlen einbeziehen — 1234...",

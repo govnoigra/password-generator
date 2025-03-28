@@ -1,5 +1,5 @@
 {
-  "h1": "Générateur de mots de passe",
+  "pagetitle": "Générateur de mots de passe",
   "subtitle": "Créez un mot de passe fort avec notre générateur.",
   "lengthLabel": "Longueur du mot de passe :",
   "numbersLabel": "Inclure des chiffres — 1234...",
