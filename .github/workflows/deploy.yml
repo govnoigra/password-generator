@@ -12,8 +12,8 @@ jobs:
       - name: Upload files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4
         with:
-          server: ${{ secrets.31.31.198.2 }}
-          username: ${{ secrets.u3073185 }}
-          password: ${{ secrets.ZV8gBjmxTr25h7V }}
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./       # Папка с файлами проекта
           server-dir: /www/generator-password.online/  # Папка на хостинге (Reg.ru)
