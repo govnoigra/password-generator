@@ -124,9 +124,7 @@ async function loadLanguage(lang) {
 
 // Функция для применения перевода
 function applyTranslations(translations) {
-    // Обновляем заголовок страницы
-   // document.querySelector('title').textContent = translations.title;
-
+ 
     // Обновляем заголовок и подзаголовок
     const pagetitle = document.querySelector('pagetitle');
     if (pagetitle) pagetitle.textContent = translations.pagetitle;
