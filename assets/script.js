@@ -30,7 +30,7 @@ document.getElementById('generate').addEventListener('click', function() {
     if (includeSymbols) characters += symbols;
 
     if (characters === '') {
-        alert('Выберите хотя бы один тип символов!');
+        alert('Error');
         return;
     }
 
@@ -88,10 +88,10 @@ document.getElementById('copy-button').addEventListener('click', function() {
                 }, 1000);
             })
             .catch(() => {
-                alert('Не удалось скопировать пароль.');
+                alert('Error'); // Не удалось скопировать пароль.
             });
     } else {
-        alert('Сначала сгенерируйте пароль.');
+        alert('Error'); // Сначала сгенерируйте пароль.
     }
 });
 
@@ -125,7 +125,7 @@ async function loadLanguage(lang) {
 // Функция для применения перевода
 function applyTranslations(translations) {
     // Обновляем заголовок страницы
-    document.querySelector('title').textContent = translations.title;
+   // document.querySelector('title').textContent = translations.title;
 
     // Обновляем заголовок и подзаголовок
     const pagetitle = document.querySelector('pagetitle');
