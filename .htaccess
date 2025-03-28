@@ -1,9 +1,17 @@
 RewriteEngine On
 
 # Редирект wwww. → на без www
-RewriteCond %{HTTP_HOST} .
-RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+#RewriteCond %{HTTP_HOST} .
+#RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# 1. Сначала убираем WWW (для HTTP)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+# 2. Затем перенаправляем HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # 2. Редирект с /index.html на главную
 RewriteCond %{THE_REQUEST} /index\.html [NC]
