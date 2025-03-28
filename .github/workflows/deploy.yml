@@ -1,0 +1,19 @@
+name: Deploy to Reg.ru via FTP
+on:
+  push:
+    branches: [ master ]  # ← Ваша ветка master, а не main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./       # Папка с файлами проекта
+          server-dir: /www/generator-password.online/  # Папка на хостинге (Reg.ru)
