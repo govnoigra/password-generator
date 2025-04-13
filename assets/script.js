@@ -106,7 +106,7 @@ document.getElementById('length').addEventListener('input', function() {
 });
 
 // Загружаем язык из localStorage или используем язык по умолчанию
-let currentLang = localStorage.getItem('selectedLang') || 'ru'; // По умолчанию русский язык
+let currentLang = localStorage.getItem('selectedLang') || 'en'; // По умолчанию русский язык
 
 // Функция для загрузки языка
 async function loadLanguage(lang) {
