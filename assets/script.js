@@ -105,7 +105,8 @@ document.getElementById('length').addEventListener('input', function() {
     }
 });
 
-let currentLang = 'ru'; // По умолчанию русский язык
+// Загружаем язык из localStorage или используем язык по умолчанию
+let currentLang = localStorage.getItem('selectedLang') || 'ru'; // По умолчанию русский язык
 
 // Функция для загрузки языка
 async function loadLanguage(lang) {
@@ -121,6 +122,23 @@ async function loadLanguage(lang) {
         console.error('Не удалось загрузить язык:', error);
     }
 }
+
+// Обработчики для выбора языкаff
+document.querySelectorAll('.language-option').forEach(option => {
+    option.addEventListener('click', () => {
+        const selectedLang = option.getAttribute('data-lang');
+        currentLang = selectedLang;
+
+        // Сохраняем выбранный язык в localStorage
+        localStorage.setItem('selectedLang', currentLang);
+
+        loadLanguage(currentLang);
+        document.getElementById('language-dropdown').style.display = 'none'; // Скрываем выпадающий список
+    });
+});
+
+// Загружаем язык при загрузке страницы
+loadLanguage(currentLang);
 
 // Функция для применения перевода
 function applyTranslations(translations) {
