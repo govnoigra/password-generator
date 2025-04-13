@@ -2,71 +2,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генератор паролей - придумайте надежный пароль бесплатно.</title>
+    <title>Password Generator</title>
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="/">
-        <img src="/assets/logo.png" alt="Логотип сайта">
+        <img src="/assets/logo.png" alt="site logo">
 			</a>
         </div>
         <div class="language-switcher">
             <div class="current-flag" id="current-flag">
-                <img src="/assets/flags/ru.png" alt="Текущий язык">
+                <img src="/assets/flags/en.png" alt="current language icon">
             </div>
             <div class="language-dropdown" id="language-dropdown">
-                <div class="language-option" data-lang="ru">
-                    <img src="/assets/flags/ru.png" alt="Русский">
-                    <span>Русский</span>
-                </div>
                 <div class="language-option" data-lang="en">
-                    <img src="/assets/flags/en.png" alt="Английский">
+                    <img src="/assets/flags/en.png" alt="English language icon">
                     <span>English</span>
                 </div>
                 <div class="language-option" data-lang="fr">
-                    <img src="/assets/flags/fr.png" alt="Французский">
+                    <img src="/assets/flags/fr.png" alt="French language icon">
                     <span>Français</span>
                 </div>
                 <div class="language-option" data-lang="es">
-                    <img src="/assets/flags/es.png" alt="Испанский">
+                    <img src="/assets/flags/es.png" alt="Spanish language icon">
                     <span>Español</span>
                 </div>
                 <div class="language-option" data-lang="de">
-                    <img src="/assets/flags/de.png" alt="Немецкий">
+                    <img src="/assets/flags/de.png" alt="German language icon">
                     <span>Deutsch</span>
+                </div>
+                <div class="language-option" data-lang="ru">
+                    <img src="/assets/flags/ru.png" alt="Russian language icon">
+                    <span>Русский</span>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <h1 class="pagetitle">Генератор паролей</h1>
-        <p class="subtitle">Создайте надежный пароль с помощью нашего генератора.</p>
+        <h1 class="pagetitle">Password Generator</h1>
+        <p class="subtitle">Create a strong password with our generator.</p>
 
         <div class="generator">
-            <label for="length">Длина пароля:</label>
+            <label for="length">Password length:</label>
             <input type="number" id="length" min="8" max="64" value="12">
-            <div id="length-warning" class="warning">Максимальная длина пароля 64 символа</div>
+            <div id="length-warning" class="warning">Maximum password length is 64 characters</div>
 
             <label for="numbers">
-                <input type="checkbox" id="numbers" checked> <span>Наличие цифр — 1234...</span>
+                <input type="checkbox" id="numbers" checked> <span>Include numbers — 1234...</span>
             </label>
             <label for="uppercase">
-                <input type="checkbox" id="uppercase" checked> <span>Наличие прописных букв — ABCD...</span>
+                <input type="checkbox" id="uppercase" checked> <span>Include uppercase letters — ABCD...</span>
             </label>
             <label for="lowercase">
-                <input type="checkbox" id="lowercase" checked> <span>Наличие строчных букв — abcd...</span>
+                <input type="checkbox" id="lowercase" checked> <span>Include lowercase letters — abcd...</span>
             </label>
             <label for="symbols">
-                <input type="checkbox" id="symbols" checked> <span>Наличие специальных символов — @$&/...</span>
+                <input type="checkbox" id="symbols" checked> <span>Include special symbols — @$&/...</span>
             </label>
             <label for="no-repeats">
-                <input type="checkbox" id="no-repeats"> <span>Не повторять символы</span>
+                <input type="checkbox" id="no-repeats"> <span>Do not repeat characters</span>
             </label>
 
-            <button id="generate">Сгенерировать</button>
+            <button id="generate">Generate</button>
             <div id="password-output">
                 <span id="password-text"></span>
                 <button id="copy-button" style="display: none;">Copy</button>
@@ -75,19 +75,16 @@
 
         <!-- SEO-текст -->
         <div class="seo-text">
-            <h2>О генераторе паролей</h2>
+            <h2>About the Password Generator</h2>
             <p>
-                Наш генератор паролей — это удобный инструмент для создания надежных и безопасных паролей. 
-                Используйте его для защиты своих учетных записей, электронной почты, социальных сетей и других сервисов. 
-                Генератор поддерживает создание паролей с цифрами, прописными и строчными буквами, а также специальными символами. 
-                Создавайте уникальные пароли длиной до 64 символов и обеспечивайте максимальную безопасность ваших данных.
+                Our password generator is a convenient tool for creating strong and secure passwords. Use it to protect your accounts, email, social networks, and other services. The generator supports creating passwords with numbers, uppercase and lowercase letters, and special symbols. Create unique passwords up to 64 characters long and ensure maximum security for your data.
             </p>
         </div>
     </main>
 
     <footer>
-        <a href="#">Политика конфиденциальности</a>
-        <p>© 2025 Генератор паролей generator-password.online</p>
+        <a href="#">Privacy Policy</a>
+        <p>© 2025 Password Generator generator-password.online</p>
     </footer>
 
     <script src="/assets/script.js"></script>
