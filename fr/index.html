@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <link rel="stylesheet" href="/assets/styles.css">
+</head>
 
     <link rel="alternate" hreflang="de-DE" href="https://generator-password.online/de/" />
     <link rel="alternate" hreflang="en-GB" href="https://generator-password.online/uk/" />
@@ -13,69 +14,64 @@
     <link rel="alternate" hreflang="ru-RU" href="https://generator-password.online/ru/" />
     <link rel="alternate" hreflang="x-default" href="https://generator-password.online/" />
 
-</head>
 <body>
     <header>
         <div class="logo">
             <a href="/">
-        <img src="/assets/logo.png" alt="site logo">
+        <img src="/assets/logo.png" alt="logo du site">
 			</a>
         </div>
         <div class="language-switcher">
             <div class="current-flag" id="current-flag">
-                <img src="/assets/flags/en.png" alt="current language icon">
+                <img src="/assets/flags/fr.png" alt="icône de la langue actuelle">
             </div>
             <div class="language-dropdown" id="language-dropdown">
                 <div class="language-option" data-lang="en">
-                    <img src="/assets/flags/en.png" alt="English language icon">
+                    <img src="/assets/flags/en.png" alt="Icône de langue anglaise">
                     <span>English</span>
                 </div>
                 <div class="language-option" data-lang="fr">
-                    <img src="/assets/flags/fr.png" alt="French language icon">
+                    <img src="/assets/flags/fr.png" alt="Icône de la langue française">
                     <span>Français</span>
                 </div>
                 <div class="language-option" data-lang="es">
-                    <img src="/assets/flags/es.png" alt="Spanish language icon">
+                    <img src="/assets/flags/es.png" alt="Icône de langue espagnole">
                     <span>Español</span>
                 </div>
                 <div class="language-option" data-lang="de">
-                    <img src="/assets/flags/de.png" alt="German language icon">
+                    <img src="/assets/flags/de.png" alt="Icône de la langue allemande">
                     <span>Deutsch</span>
-                </div>
-                <div class="language-option" data-lang="ru">
-                    <img src="/assets/flags/ru.png" alt="Russian language icon">
-                    <span>Русский</span>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <h1 class="pagetitle">Password Generator</h1>
-        <p class="subtitle">Create a strong password with our generator.</p>
+        <h1 id="pagetitle">Générateur de mots de passe</h1>
+        <p class="subtitle">Créez un mot de passe fort avec notre générateur.</p>
 
         <div class="generator">
-            <label for="length">Password length:</label>
+            <label for="length">Longueur du mot de passe :</label>
             <input type="number" id="length" min="8" max="64" value="12">
-            <div id="length-warning" class="warning">Maximum password length is 64 characters</div>
+            <div id="length-warning" class="warning">La longueur maximale du mot de passe est de 64 caractères</div>
 
             <label for="numbers">
-                <input type="checkbox" id="numbers" checked> <span>Include numbers — 1234...</span>
+                <input type="checkbox" id="numbers" checked> <span>Inclure des chiffres — 1234...</span>
             </label>
             <label for="uppercase">
-                <input type="checkbox" id="uppercase" checked> <span>Include uppercase letters — ABCD...</span>
+                <input type="checkbox" id="uppercase" checked> <span>Inclure des lettres majuscules — ABCD...</span>
             </label>
             <label for="lowercase">
-                <input type="checkbox" id="lowercase" checked> <span>Include lowercase letters — abcd...</span>
+                <input type="checkbox" id="lowercase" checked> <span>Inclure des lettres minuscules — abcd...</span>
             </label>
             <label for="symbols">
-                <input type="checkbox" id="symbols" checked> <span>Include special symbols — @$&/...</span>
+                <input type="checkbox" id="symbols" checked> <span>Inclure des symboles spéciaux — @$&/...</span>
             </label>
             <label for="no-repeats">
-                <input type="checkbox" id="no-repeats"> <span>Do not repeat characters</span>
+                <input type="checkbox" id="no-repeats"> <span>Ne pas répéter les caractères</span>
             </label>
 
-            <button id="generate">Generate</button>
+            <button id="generate">Générer</button>
             <div id="password-output">
                 <span id="password-text"></span>
                 <button id="copy-button" style="display: none;">Copy</button>
@@ -84,16 +80,16 @@
 
         <!-- SEO-text -->
         <div class="seo-text">
-            <h2>About the Password Generator</h2>
+            <h2>À propos du générateur de mots de passe</h2>
             <p>
-                Our password generator is a convenient tool for creating strong and secure passwords. Use it to protect your accounts, email, social networks, and other services. The generator supports creating passwords with numbers, uppercase and lowercase letters, and special symbols. Create unique passwords up to 64 characters long and ensure maximum security for your data.
+                Notre générateur de mots de passe est un outil pratique pour créer des mots de passe forts et sécurisés. Utilisez-le pour protéger vos comptes, e-mails, réseaux sociaux et autres services. Le générateur prend en charge la création de mots de passe avec des chiffres, des lettres majuscules et minuscules, ainsi que des symboles spéciaux. Créez des mots de passe uniques jusqu'à 64 caractères et assurez une sécurité maximale pour vos données.
             </p>
         </div>
     </main>
 
     <footer>
-        <a href="/privacypolicy.html">Privacy Policy</a>
-        <p>© 2025 Password Generator generator-password.online</p>
+        <a href="/fr/privacypolicy.html">Politique de confidentialité</a>
+        <p>© 2025 Générateur de mots de passe generator-password.online</p>
     </footer>
 
     <script src="/assets/script.js"></script>
