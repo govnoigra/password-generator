@@ -117,26 +117,17 @@ const languageMap = {
 
 // Определяем язык и флаг на основе URL
 function getLanguageFromUrl() {
-    const path = window.location.pathname.split('/').filter(Boolean)[0]; // Получаем первую часть пути
+    const path = window.location.pathname.split('/').filter(Boolean)[0] || ''; // Получаем первую часть пути
     return languageMap[path] || { lang: 'en', flag: 'en' }; // Если подпапка не найдена, возвращаем en
 }
 
-// Загружаем язык из localStorage или URL
-let currentLang = localStorage.getItem('selectedLang') || getLanguageFromUrl().lang;
-let currentFlag;
-const currentPath = window.location.pathname.split('/').filter(Boolean)[0] || '';
-if (localStorage.getItem('selectedLang')) {
-    const savedLang = localStorage.getItem('selectedLang');
-    if (savedLang === 'en' && currentPath === 'us') {
-        currentFlag = 'us'; // На /us/ для en используем us.png
-    } else if (savedLang === 'en' && currentPath === 'uk') {
-        currentFlag = 'en'; // На /uk/ для en используем en.png
-    } else {
-        currentFlag = Object.values(languageMap).find(map => map.lang === savedLang)?.flag || savedLang;
-    }
-} else {
-    currentFlag = getLanguageFromUrl().flag; // Если нет сохранённого языка, берём флаг из URL
-}
+// Загружаем язык и флаг из URL
+const urlLangData = getLanguageFromUrl();
+let currentLang = urlLangData.lang;
+let currentFlag = urlLangData.flag;
+
+// Сохраняем язык подпапки в localStorage, чтобы он использовался при обновлении страницы
+localStorage.setItem('selectedLang', currentLang);
 
 // Функция для загрузки языка
 async function loadLanguage(lang) {
