@@ -231,3 +231,12 @@ document.addEventListener('click', (event) => {
 
 // Загружаем язык по умолчанию
 loadLanguage(currentLang);
+
+// Список поддерживаемых языков (соответствует подпапкам)
+const supportedLanguages = ['ru', 'fr', 'de', 'es', 'uk', 'us', 'en'];
+
+// Определяем язык на основе URL
+function getLanguageFromUrl() {
+    const path = window.location.pathname.split('/').filter(Boolean)[0]; // Получаем первую часть пути
+    return supportedLanguages.includes(path) ? path : 'en'; // Если язык не поддерживается, возвращаем 'en'
+}
