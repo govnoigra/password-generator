@@ -111,7 +111,7 @@ let currentLang = localStorage.getItem('selectedLang') || 'en'; // По умол
 // Функция для загрузки языка
 async function loadLanguage(lang) {
     try {
-        const response = await fetch(`lang/lang-${lang}.json`);
+        const response = await fetch(`/lang/lang-${lang}.json`);
         if (!response.ok) {
             throw new Error('Ошибка загрузки языка');
         }
@@ -201,7 +201,7 @@ function applyTranslations(translations) {
 // Функция для обновления текущего флага
 function updateCurrentFlag(lang) {
     const currentFlag = document.getElementById('current-flag');
-    currentFlag.innerHTML = `<img src="assets/flags/${lang}.png" alt="Текущий язык">`;
+    currentFlag.innerHTML = `<img src="/assets/flags/${lang}.png" alt="Текущий язык">`;
 }
 
 // Обработчики для выбора языка
