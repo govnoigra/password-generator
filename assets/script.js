@@ -160,13 +160,18 @@ function updateCurrentFlag(flag) {
     }
 }
 
-// Обработчики для выбора языка
 document.querySelectorAll('.language-option').forEach(option => {
     option.addEventListener('click', () => {
         const selectedLang = option.getAttribute('data-lang');
         currentLang = selectedLang;
-        // Устанавливаем флаг в зависимости от выбранного языка
-        currentFlag = Object.values(languageMap).find(map => map.lang === selectedLang)?.flag || selectedLang;
+
+        // Устанавливаем флаг: для 'en' на /us/ используем us.png, иначе берём из languageMap
+        const currentPath = window.location.pathname.split('/').filter(Boolean)[0];
+        if (selectedLang === 'en' && currentPath === 'us') {
+            currentFlag = 'us';
+        } else {
+            currentFlag = Object.values(languageMap).find(map => map.lang === selectedLang)?.flag || selectedLang;
+        }
 
         // Сохраняем выбранный язык в localStorage
         localStorage.setItem('selectedLang', currentLang);
