@@ -123,7 +123,9 @@ function getLanguageFromUrl() {
 
 // Загружаем язык из localStorage или URL
 let currentLang = localStorage.getItem('selectedLang') || getLanguageFromUrl().lang;
-let currentFlag = getLanguageFromUrl().flag; // Отслеживаем флаг отдельно
+let currentFlag = localStorage.getItem('selectedLang')
+    ? (Object.values(languageMap).find(map => map.lang === localStorage.getItem('selectedLang'))?.flag || localStorage.getItem('selectedLang'))
+    : getLanguageFromUrl().flag; // Если в localStorage есть язык, берём соответствующий флаг
 
 // Функция для загрузки языка
 async function loadLanguage(lang) {
@@ -237,11 +239,6 @@ function applyTranslations(translations) {
     if (strengthText) strengthText.textContent = ''; // Clear strength text on language change
 }
 
-// Функция для обновления текущего флага
-function updateCurrentFlag(lang) {
-    const currentFlag = document.getElementById('current-flag');
-    currentFlag.innerHTML = `<img src="/assets/flags/${lang}.png" alt="Текущий язык">`;
-}
 
 // Обработчики для выбора языка
 document.getElementById('current-flag').addEventListener('click', (event) => {
@@ -259,6 +256,3 @@ document.addEventListener('click', (event) => {
         dropdown.style.display = 'none';
     }
 });
-
-// Загружаем язык по умолчанию
-//loadLanguage(currentLang);
