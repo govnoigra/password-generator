@@ -105,56 +105,84 @@ document.getElementById('length').addEventListener('input', function() {
     }
 });
 
-// Маппинг подпапок на файлы языков
+// Маппинг подпапок на файлы языков и флаги
 const languageMap = {
-    'ru': 'ru',
-    'fr': 'fr',
-    'de': 'de',
-    'es': 'es',
-    'uk': 'en', // Подпапка /uk/ использует lang-en.json
-    'us': 'en'  // Подпапка /us/ использует lang-en.json
+    'ru': { lang: 'ru', flag: 'ru' },
+    'fr': { lang: 'fr', flag: 'fr' },
+    'de': { lang: 'de', flag: 'de' },
+    'es': { lang: 'es', flag: 'es' },
+    'uk': { lang: 'en', flag: 'uk' }, // Подпапка /uk/ использует lang-en.json и флаг uk.png
+    'us': { lang: 'en', flag: 'us' }  // Подпапка /us/ использует lang-en.json и флаг us.png
 };
 
-// Определяем язык на основе URL
+// Определяем язык и флаг на основе URL
 function getLanguageFromUrl() {
     const path = window.location.pathname.split('/').filter(Boolean)[0]; // Получаем первую часть пути
-    return languageMap[path] || 'en'; // Если подпапка не найдена, возвращаем 'en'
+    return languageMap[path] || { lang: 'en', flag: 'en' }; // Если подпапка не найдена, возвращаем en
 }
 
 // Загружаем язык из localStorage или URL
-let currentLang = localStorage.getItem('selectedLang') || getLanguageFromUrl();
-
-// Загружаем язык при загрузке страницы
-loadLanguage(currentLang);
+let currentLang = localStorage.getItem('selectedLang') || getLanguageFromUrl().lang;
+let currentFlag = getLanguageFromUrl().flag; // Отслеживаем флаг отдельно
 
 // Функция для загрузки языка
 async function loadLanguage(lang) {
     try {
         const response = await fetch(`/lang/lang-${lang}.json`);
         if (!response.ok) {
-            throw new Error('Ошибка загрузки языка');
+            console.warn(`Язык ${lang} не найден, загружаем en`);
+            lang = 'en'; // Устанавливаем язык по умолчанию
+            currentFlag = 'en'; // Устанавливаем флаг по умолчанию
+            const fallbackResponse = await fetch(`/lang/lang-en.json`);
+            if (!fallbackResponse.ok) {
+                throw new Error('Ошибка загрузки языка en');
+            }
+            const translations = await fallbackResponse.json();
+            applyTranslations(translations);
+            updateCurrentFlag(currentFlag);
+            return;
         }
         const translations = await response.json();
         applyTranslations(translations);
-        updateCurrentFlag(lang); // Обновляем текущий флаг
+        updateCurrentFlag(currentFlag); // Обновляем флаг
     } catch (error) {
         console.error('Не удалось загрузить язык:', error);
     }
 }
 
-// Обработчики для выбора языкаff
+// Функция для обновления текущего флага
+function updateCurrentFlag(flag) {
+    const currentFlagElement = document.getElementById('current-flag');
+    if (currentFlagElement) {
+        currentFlagElement.innerHTML = `<img src="/assets/flags/${flag}.png" alt="Текущий язык">`;
+    }
+}
+
+// Обработчики для выбора языка
 document.querySelectorAll('.language-option').forEach(option => {
     option.addEventListener('click', () => {
         const selectedLang = option.getAttribute('data-lang');
         currentLang = selectedLang;
+        // Устанавливаем флаг в зависимости от выбранного языка
+        currentFlag = Object.values(languageMap).find(map => map.lang === selectedLang)?.flag || selectedLang;
 
         // Сохраняем выбранный язык в localStorage
         localStorage.setItem('selectedLang', currentLang);
 
-        loadLanguage(currentLang);
-        document.getElementById('language-dropdown').style.display = 'none'; // Скрываем выпадающий список
+        // Перенаправляем на соответствующую подпапку
+        const newPath = selectedLang === 'en' ? '/' : `/${currentFlag}/`;
+        if (window.location.pathname !== newPath) {
+            window.location.href = newPath;
+        } else {
+            loadLanguage(currentLang); // Если уже на нужной странице, загружаем язык
+        }
+
+        document.getElementById('language-dropdown').style.display = 'none';
     });
 });
+
+// Загружаем язык при загрузке страницы
+loadLanguage(currentLang);
 
 // Загружаем язык при загрузке страницы
 //loadLanguage(currentLang);
