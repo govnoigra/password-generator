@@ -105,8 +105,27 @@ document.getElementById('length').addEventListener('input', function() {
     }
 });
 
-// Загружаем язык из localStorage или используем язык по умолчанию
-let currentLang = localStorage.getItem('selectedLang') || 'en'; // По умолчанию русский язык
+// Маппинг подпапок на файлы языков
+const languageMap = {
+    'ru': 'ru',
+    'fr': 'fr',
+    'de': 'de',
+    'es': 'es',
+    'uk': 'en', // Подпапка /uk/ использует lang-en.json
+    'us': 'en'  // Подпапка /us/ использует lang-en.json
+};
+
+// Определяем язык на основе URL
+function getLanguageFromUrl() {
+    const path = window.location.pathname.split('/').filter(Boolean)[0]; // Получаем первую часть пути
+    return languageMap[path] || 'en'; // Если подпапка не найдена, возвращаем 'en'
+}
+
+// Загружаем язык из localStorage или URL
+let currentLang = localStorage.getItem('selectedLang') || getLanguageFromUrl();
+
+// Загружаем язык при загрузке страницы
+loadLanguage(currentLang);
 
 // Функция для загрузки языка
 async function loadLanguage(lang) {
@@ -138,7 +157,7 @@ document.querySelectorAll('.language-option').forEach(option => {
 });
 
 // Загружаем язык при загрузке страницы
-loadLanguage(currentLang);
+//loadLanguage(currentLang);
 
 // Функция для применения перевода
 function applyTranslations(translations) {
@@ -230,13 +249,4 @@ document.addEventListener('click', (event) => {
 });
 
 // Загружаем язык по умолчанию
-loadLanguage(currentLang);
-
-// Список поддерживаемых языков (соответствует подпапкам)
-const supportedLanguages = ['ru', 'fr', 'de', 'es', 'uk', 'us', 'en'];
-
-// Определяем язык на основе URL
-function getLanguageFromUrl() {
-    const path = window.location.pathname.split('/').filter(Boolean)[0]; // Получаем первую часть пути
-    return supportedLanguages.includes(path) ? path : 'en'; // Если язык не поддерживается, возвращаем 'en'
-}
+//loadLanguage(currentLang);
