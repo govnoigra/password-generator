@@ -169,13 +169,8 @@ document.querySelectorAll('.language-option').forEach(option => {
         // Сохраняем выбранный язык в localStorage
         localStorage.setItem('selectedLang', currentLang);
 
-        // Перенаправляем на соответствующую подпапку
-        const newPath = selectedLang === 'en' ? '/' : `/${currentFlag}/`;
-        if (window.location.pathname !== newPath) {
-            window.location.href = newPath;
-        } else {
-            loadLanguage(currentLang); // Если уже на нужной странице, загружаем язык
-        }
+        // Загружаем выбранный язык без перенаправления
+        loadLanguage(currentLang);
 
         document.getElementById('language-dropdown').style.display = 'none';
     });
@@ -183,9 +178,6 @@ document.querySelectorAll('.language-option').forEach(option => {
 
 // Загружаем язык при загрузке страницы
 loadLanguage(currentLang);
-
-// Загружаем язык при загрузке страницы
-//loadLanguage(currentLang);
 
 // Функция для применения перевода
 function applyTranslations(translations) {
@@ -258,14 +250,6 @@ document.getElementById('current-flag').addEventListener('click', (event) => {
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
 
-document.querySelectorAll('.language-option').forEach(option => {
-    option.addEventListener('click', () => {
-        const selectedLang = option.getAttribute('data-lang');
-        currentLang = selectedLang;
-        loadLanguage(currentLang);
-        document.getElementById('language-dropdown').style.display = 'none'; // Скрываем выпадающий список
-    });
-});
 
 // Закрытие выпадающего списка при клике вне его
 document.addEventListener('click', (event) => {
