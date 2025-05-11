@@ -123,9 +123,20 @@ function getLanguageFromUrl() {
 
 // Загружаем язык из localStorage или URL
 let currentLang = localStorage.getItem('selectedLang') || getLanguageFromUrl().lang;
-let currentFlag = localStorage.getItem('selectedLang')
-    ? (Object.values(languageMap).find(map => map.lang === localStorage.getItem('selectedLang'))?.flag || localStorage.getItem('selectedLang'))
-    : getLanguageFromUrl().flag; // Если в localStorage есть язык, берём соответствующий флаг
+let currentFlag;
+const currentPath = window.location.pathname.split('/').filter(Boolean)[0] || '';
+if (localStorage.getItem('selectedLang')) {
+    const savedLang = localStorage.getItem('selectedLang');
+    if (savedLang === 'en' && currentPath === 'us') {
+        currentFlag = 'us'; // На /us/ для en используем us.png
+    } else if (savedLang === 'en' && currentPath === 'uk') {
+        currentFlag = 'en'; // На /uk/ для en используем en.png
+    } else {
+        currentFlag = Object.values(languageMap).find(map => map.lang === savedLang)?.flag || savedLang;
+    }
+} else {
+    currentFlag = getLanguageFromUrl().flag; // Если нет сохранённого языка, берём флаг из URL
+}
 
 // Функция для загрузки языка
 async function loadLanguage(lang) {
