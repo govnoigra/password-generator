@@ -111,7 +111,7 @@ const languageMap = {
     'fr': { lang: 'fr', flag: 'fr' },
     'de': { lang: 'de', flag: 'de' },
     'es': { lang: 'es', flag: 'es' },
-    'uk': { lang: 'en', flag: 'uk' }, // Подпапка /uk/ использует lang-en.json и флаг uk.png
+    'uk': { lang: 'en', flag: 'en' }, // Подпапка /uk/ использует lang-en.json и флаг en.png
     'us': { lang: 'en', flag: 'us' }  // Подпапка /us/ использует lang-en.json и флаг us.png
 };
 
